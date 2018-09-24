@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/byte-buddy-1.8.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/client-combined-3.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/client-combined-3.14.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/commons-exec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/cucumber-expressions-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/cucumber-extentsreport-3.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/gherkin-5.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/guava-25.0-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/okhttp-3.10.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/okio-1.14.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/cucumber-jvm-deps-1.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/cucumber-core-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/cucumber-java-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mtrac/Documents/Gene&apos;s Folder/Work/Selenium Files/New Cucumber Jars/cucumber-junit-2.3.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
