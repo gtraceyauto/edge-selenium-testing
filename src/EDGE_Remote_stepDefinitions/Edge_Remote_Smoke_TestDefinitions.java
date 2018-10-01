@@ -122,6 +122,21 @@ public class Edge_Remote_Smoke_TestDefinitions {
 		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("gtracey@stats.com");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("testing123");
 		driver.findElement(By.cssSelector("#btn-login")).click();
+	}
+		
+	@When("^each competition is selected$")
+	public void each_competition_is_selected() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 120);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div[1]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[1]/a[2]")));
+		driver.findElement(By.cssSelector("#root > div.navigation-bar > div.competition-menu > div.league-dropdown-display-container > div > div.league-dropdown-display > span.league-dropdown-chevron")).click();
+		driver.findElement(By.cssSelector("#root > div.navigation-bar > div.competition-menu > div.league-dropdown-display-container > div > div.league-dropdown-items.show > div:nth-child(2) > div > div")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div[4]/div[3]/div[1]/div/div[1]")));
+		driver.findElement(By.xpath("//*[@id=\\\"root\\\"]/div[2]/div[2]/div[2]/div[2]/div/div[1]/span[1]")).getText().equalsIgnoreCase("1. FC Nurnberg");
+		driver.findElement(By.cssSelector("#root > div.navigation-bar > div.competition-menu > div.league-dropdown-display-container > div > div.league-dropdown-display > span.league-dropdown-chevron")).click();
+		driver.findElement(By.cssSelector("#root > div.navigation-bar > div.competition-menu > div.league-dropdown-display-container > div > div.league-dropdown-items.show > div:nth-child(3) > div > div")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\\\"root\\\"]/div[2]/div[2]/div[2]/div[2]/div/div[1]/span[1]")));
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div[2]/div[2]/div/div[1]/span[1]")).getText().equalsIgnoreCase("Aston Villa");
 		
 		
 	}
@@ -148,6 +163,12 @@ public class Edge_Remote_Smoke_TestDefinitions {
 		System.out.println(driver.getTitle());
 		 driver.quit();	
 	   		
+	}
+	
+	@Then("^the default team for the selected competition will be displayed$")
+	public void the_default_team_for_the_selected_competition_will_be_displayed() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 120);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[2]/div[4]/div[3]/div[1]/div/div[1]")));
 	}
 	
 	@Then("^remote browser will close$")

@@ -1,10 +1,16 @@
-Feature: Test EDGE smoke login and select competitions scenario
+Feature: Test EDGE smoke login and select competitions and teams scenario
 
-  Scenario: Test login with valid credentials  select competitions  and logout 
+  Scenario: Test login with valid credentials  select competitions select teams  and logout 
     Given Open Chrome on Windows and start Edge application
     When a valid username and password
-    When each competition is selected
+    When each team is selected from EPL
+    When each team is selected from Bundesliga
+    When each team is selected from England Championship
+    When each team is selected from France LFP
+    When each team is selected from UAE
+    When each team is selected from Scotland
     Then the default team for the selected competition will be displayed
+    Then the selected team data will be displayed
   	Then user should be able to login and logout successfully
  
 # Order of competitions must be in this order in Auth0
