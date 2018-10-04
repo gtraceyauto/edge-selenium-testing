@@ -1,11 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/EDGE_Features/Edge_Login_Smoke_Test_Local.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/EDGE_Features/Edge_Smoke_Tests_Remote_Chrome_Win10.feature");
 formatter.feature({
-  "name": "Test EDGE smoke login scenario",
+  "name": "Test Chrome browser on Win10 EDGE smoke test scenarios",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Test login with valid credentials, select competitions, and logout",
+  "name": "Test login, competitions, modules, and logout with valid credentials via Chrome on Win10",
   "description": "",
   "keyword": "Scenario"
 });
@@ -13,54 +13,70 @@ formatter.step({
   "name": "Open Chrome on Windows and start Edge application",
   "keyword": "Given "
 });
-formatter.match({});
+formatter.match({
+  "location": "Edge_Remote_Smoke_TestDefinitions.Open_Chrome_on_Windows_and_start_Edge_application()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 formatter.step({
   "name": "a valid username and password",
   "keyword": "When "
 });
 formatter.match({
-  "location": "Edge_TestDefinitions.a_valid_username_and_password()"
+  "location": "Edge_Remote_Smoke_TestDefinitions.a_valid_username_and_password()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "each competition is selected",
   "keyword": "When "
 });
 formatter.match({
-  "location": "Edge_TestDefinitions.each_competition_is_selected()"
+  "location": "Edge_Remote_Smoke_TestDefinitions.each_competition_is_selected()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.step({
+  "name": "each module is selected",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "Edge_Remote_Smoke_TestDefinitions.each_module_is_selected()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
   "name": "user should be able to login",
   "keyword": "Then "
 });
-formatter.match({});
+formatter.match({
+  "location": "Edge_Remote_Smoke_TestDefinitions.user_should_be_able_to_login()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the default team for the selected competition will be displayed",
+  "name": "each module page opens",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "Edge_TestDefinitions.the_default_team_for_the_selected_competition_will_be_displayed()"
+  "location": "Edge_Remote_Smoke_TestDefinitions.each_module_page_opens()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user should be able to logout successfully",
   "keyword": "Then "
 });
-formatter.match({});
+formatter.match({
+  "location": "Edge_Remote_Smoke_TestDefinitions.user_should_be_able_to_logout_successfully()"
+});
 formatter.result({
-  "status": "undefined"
+  "status": "passed"
 });
 });

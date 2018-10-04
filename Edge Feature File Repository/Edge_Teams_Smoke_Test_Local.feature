@@ -9,6 +9,16 @@ Feature: Test EDGE smoke login and select competitions and teams scenario
     When each team is selected from France LFP
     When each team is selected from UAE
     When each team is selected from Scotland
+    When each team is selected from League Two
+    When each team is selected from League One
+    When each team is selected from PSL
+    When each team is selected from QSL
+    When each team is selected from Serie A
+    When each team is selected from Spain LaLiga
+    When each team is selected from Argentina
+    When each team is selected from Dutch
+    When each team is selected from Belgium
+    When each team is selected from World Cup
     Then the default team for the selected competition will be displayed
     Then the selected team data will be displayed
   	Then user should be able to login and logout successfully
