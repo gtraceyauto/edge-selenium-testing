@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.Platform;
@@ -14,6 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 //import com.thoughtworks.selenium.webdriven.commands.WaitForPageToLoad;
 
@@ -38,34 +40,48 @@ public class Edge_Remote_Smoke_TestDefinitions {
 	  	@Given("^Open Chrome on Windows and start Edge application$")
 	  		public void Open_Chrome_on_Windows_and_start_Edge_application() throws Throwable {
 	  			DesiredCapabilities caps = new DesiredCapabilities();
+	  			//ChromeOptions options = new ChromeOptions();
+	  			//options.addArguments("-incognito");
+	  			//caps.setCapability(ChromeOptions.CAPABILITY, options);
 	  			caps.setCapability("browser", "Chrome");
 	  			caps.setCapability("browser_version", "68.0");
 	  			caps.setCapability("os", "Windows");
 	  			caps.setCapability("os_version", "10");
 	  			caps.setCapability("resolution", "1920x1080");
-	  			caps.setCapability("browserstack.local", "false");
+	  			//caps.setCapability("browserstack.local", "true");
+	  			//caps.setCapability("browserstack.networkLogs", "true");
 	  			caps.setCapability("browserstack.selenium_version", "3.14.0");
+	  			caps.setCapability("browserstack.chrome.driver", "2.41");
 	  			caps.setCapability("name", "Edge Smoke Tests- Win 10,Chrome 68.0");
 	  			//caps.setCapability("browserstack.debug", "true");
 	  			driver = new RemoteWebDriver(new URL(URL), caps);
-	  			driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
+	  			//driver.manage().deleteAllCookies();
 	  			driver.manage().window().maximize();
+	  			//driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");//stage
+	  			
+	  		    //driver.get("http://stats-edge-website.s3-website.us-east-1.amazonaws.com");//prod
+	  			driver.get("http://edge.stats.com");//prod
+	  			
+	  		
 	}
 		 @Given("^Open Chrome on MacOS and start Edge application$")
 			public void Open_Chrome_on_MacOS_and_start_Edge_application() throws Throwable {
 				DesiredCapabilities caps = new DesiredCapabilities();
 				caps.setCapability("browser", "Chrome");
-				caps.setCapability("browser_version", "69.0");
+				caps.setCapability("browser_version", "68.0");
 				caps.setCapability("os", "OS X");
 				caps.setCapability("os_version", "High Sierra");
 				caps.setCapability("resolution", "1920x1080");
 			    //caps.setCapability("browserstack.debug", "true");
 			    caps.setCapability("browserstack.local", "false");
 			    caps.setCapability("browserstack.selenium_version", "3.14.0");
+			    caps.setCapability("browserstack.chrome.driver", "2.41");
 			    caps.setCapability("name", "Edge Smoke Tests- High Sierra, Chrome 68.0");
 				 driver = new RemoteWebDriver(new URL(URL), caps);
-				 driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
+				 //driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
 				 driver.manage().window().maximize();
+				 driver.get("http://edge.stats.com");
+				 
 			}
 			
 			@Given("^Open Safari on MacOS and start Edge application$")
@@ -81,7 +97,8 @@ public class Edge_Remote_Smoke_TestDefinitions {
 			    caps.setCapability("browserstack.selenium_version", "3.14.0");
 			    caps.setCapability("name", "Edge Smoke Tests- Safari 11.1");
 				 driver = new RemoteWebDriver(new URL(URL), caps);
-				 driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
+				 //driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
+				 driver.get("http://edge.stats.com");
 				 driver.manage().window().maximize();
 			}
 					
@@ -98,8 +115,9 @@ public class Edge_Remote_Smoke_TestDefinitions {
 			    caps.setCapability("browserstack.selenium_version", "3.14.0");
 			    caps.setCapability("name", "Edge Smoke Tests- Win 10,FireFox 60.0");
 			    driver = new RemoteWebDriver(new URL(URL), caps);			    
-				driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
-				driver.manage().window().maximize();
+				//driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
+			    driver.get("http://edge.stats.com");
+			    driver.manage().window().maximize();
 			}
 			
 			@Given("^Open Firefox on MacOS and start Edge application$")
@@ -115,8 +133,9 @@ public class Edge_Remote_Smoke_TestDefinitions {
 			    caps.setCapability("browserstack.selenium_version", "3.14.0");
 			    caps.setCapability("name", "Edge Smoke Tests- High Sierra, Firefox 60.0");
 			    driver = new RemoteWebDriver(new URL(URL), caps);		    	 
-			   	driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
-			   	driver.manage().window().maximize();
+			   	//driver.get("http://stats-edge-website-stage.s3-website.us-east-1.amazonaws.com");
+			    driver.get("http://edge.stats.com");
+			    driver.manage().window().maximize();
 			}	 
 		 
 
@@ -127,6 +146,18 @@ public class Edge_Remote_Smoke_TestDefinitions {
 		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("gtracey@stats.com");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("testing123");
 		driver.findElement(By.cssSelector("#btn-login")).click();
+		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		//driver.navigate().back()
+		Thread.sleep(10000);
+		//driver.navigate().back();
+		driver.navigate().to("http://edge.stats.com/teams/6145/last/5/201839");
+		Thread.sleep(10000);
+		//driver.navigate().back();
+		driver.navigate().to("http://edge.stats.com/teams/6145/last/5/201839");
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"password\"]")));
+		//driver.get("http://edge.stats.com/teams/6145/last/5/201839");
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"root\"]/div[1]/img")));
+	
 	}
 	
 	@When("^each module is selected$")
